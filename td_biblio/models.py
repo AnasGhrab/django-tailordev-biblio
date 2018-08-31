@@ -189,7 +189,7 @@ class Entry(models.Model):
         related_name='entries',
         through='AuthorEntryRank'
     )
-    journal = models.ForeignKey('Journal', related_name='entries')
+    journal = models.ForeignKey('Journal', related_name='entries', blank=True)
     publication_date = models.DateField(_("Publication date"), null=True)
     is_partial_publication_date = models.BooleanField(
         _("Partial publication date?"),
